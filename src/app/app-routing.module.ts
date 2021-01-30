@@ -22,7 +22,7 @@ const routes: Routes = [
     path: 'new', component: NewblogComponent
   },
   {
-    path: 'edit', component: EditblogComponent
+    path: 'edit/:blogid', component: EditblogComponent
   },
 
 ];

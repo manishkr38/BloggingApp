@@ -3,7 +3,7 @@ export class Blog {
     scData: string = "";
     userName: string = "";
     userId: string = "";
-    dateCreated: Date = null;
+    dateCreated: string = "";
     isActive: number = 0;
     heading: string = ""; 
     urlData: string = "";

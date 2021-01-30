@@ -16,15 +16,6 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class NewblogComponent implements OnInit {
 
-  isShowEditor: boolean = false;
-  selectedImages: any[];
-  isArticleSel: boolean = false;
-  editorPh: string = "Share what's on your mind...";
-
-  dropdownList = [];
-  selectedItems = [];
-  dropdownSettings = {};
-
   sitecontent: Blog;
   userId: string;
   userName: string;
@@ -35,23 +26,14 @@ export class NewblogComponent implements OnInit {
   generalError: boolean = false;
 
   user: User;
-  currentUserImage: any;
-
-  autoSkills: any;
-
-  groupid: number;
-  groupname: string;
-  modulename: string;
-
-  isBrowser: boolean;
-  isTestPaper: boolean;
-
+ 
   constructor(private userService: UserService, private toastr: ToastrService, private http: HttpClient,
     private router: Router, private route: ActivatedRoute, private blogServices: BlogService) {
     this.sitecontent = new Blog;
   }
 
   ngOnInit(): void {
+    
   }
 
   config: AngularEditorConfig = {
