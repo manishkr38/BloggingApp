@@ -23,18 +23,19 @@ export class HomeComponent implements OnInit {
 
   deleteBlog(index) {
     debugger;
-    if(this.siteData.length > 0)
-    {
+    if (this.siteData.length > 0) {
       if (window.localStorage['blogs'] != undefined && window.localStorage['blogs'] != null) {
         var blogs = JSON.parse(window.localStorage['blogs']);
         if (blogs.length > 0) {
           if (index != null) {
             this.siteData.splice(index, 1);
             window.localStorage.removeItem('blogs');
-            window.localStorage['blogs'] = JSON.stringify(this.siteData);
+            if (this.siteData.length > 0) {
+              window.localStorage['blogs'] = JSON.stringify(this.siteData);
+            }
           }
         }
-  
+
       }
     }
   }
