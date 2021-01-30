@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 import { EditblogComponent } from './sitemodules/editblog/editblog.component';
 import { HomeComponent } from './sitemodules/home/home.component';
 import { NewblogComponent } from './sitemodules/newblog/newblog.component';
@@ -19,10 +20,10 @@ const routes: Routes = [
     path: 'register', component: RegisterComponent
   },
   {
-    path: 'new', component: NewblogComponent
+    path: 'new', component: NewblogComponent, canActivate: [AuthGuard]
   },
   {
-    path: 'edit/:blogid', component: EditblogComponent
+    path: 'edit/:blogid', component: EditblogComponent, canActivate: [AuthGuard]
   },
 
 ];
