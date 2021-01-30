@@ -4,8 +4,8 @@
         <div class="post-text">
             <h3>{{data.heading}}</h3>
             <span>created by : {{data.userName}} on {{data.dateCreated}}</span>
-            &nbsp;&nbsp;<a (click)="deleteBlog(i)">delete</a>
-            &nbsp;&nbsp;<a (click)="editBlog(i)">edit</a>
+            &nbsp;&nbsp;<a *ngIf="isUserLoggedIn" (click)="deleteBlog(i)">delete</a>
+            &nbsp;&nbsp;<a *ngIf="isUserLoggedIn" (click)="editBlog(i)">edit</a>
             <hr>
             <div [innerHTML]="data.scData"></div>
         </div>

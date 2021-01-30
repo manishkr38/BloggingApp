@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DataSharingService } from 'src/app/auth/data-sharing.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   siteData: any = [];
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  isUserLoggedIn: boolean;
+  constructor(private router: Router, private route: ActivatedRoute,
+    private dataSharingService: DataSharingService) { 
+      this.dataSharingService.isUserLoggedIn.subscribe(
+        value => {
+          this.isUserLoggedIn = value;
+        });
+    }
 
   ngOnInit(): void {
     debugger;
