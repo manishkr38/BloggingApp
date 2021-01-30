@@ -1,0 +1,18 @@
+<div class="col-md-3"></div>
+
+<div class="col-md-6">
+    <h4>Create New Blog</h4>
+    <form #saveContentForm="ngForm" (ngSubmit)="OnSubmit(saveContentForm)" class="form">
+
+        <input name="heading" #heading="ngModel" [(ngModel)]="sitecontent.heading"
+            style="color:rgb(120,120,120); font-size:15px; font-weight:bold;" type="text" class="form-control"
+            placeholder="Headline For Blog...">
+
+        <angular-editor [config]="config" name="scData" #scData="ngModel" [(ngModel)]="sitecontent.scData" id="scDataId"
+            autofocus></angular-editor>
+
+        <button class="btn btn-primary" type="submit">Publish</button>
+
+    </form>
+</div>
+<div class="col-md-3"></div>
