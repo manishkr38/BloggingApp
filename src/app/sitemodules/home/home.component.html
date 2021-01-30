@@ -1,11 +1,11 @@
 <div class="col-md-3"></div>
 <div class="col-md-6" *ngIf="siteData.length > 0">
-    <div class="post-content" *ngFor="let data of siteData" style="padding:10px; margin-top:5px; background-color: rgb(240,240,240);" >
+    <div class="post-content" *ngFor="let data of siteData; index as i" style="padding:10px; margin-top:5px; background-color: rgb(240,240,240);" >
         <div class="post-text">
             <h3>{{data.heading}}</h3>
             <span>created by : {{data.userName}} on {{data.dateCreated}}</span>
-            &nbsp;&nbsp;<a (click)="deleteBlog(data.id)">delete</a>
-            &nbsp;&nbsp;<a (click)="editBlog(data.id)">edit</a>
+            &nbsp;&nbsp;<a (click)="deleteBlog(i)">delete</a>
+            &nbsp;&nbsp;<a (click)="editBlog(i)">edit</a>
             <hr>
             <div [innerHTML]="data.scData"></div>
         </div>
